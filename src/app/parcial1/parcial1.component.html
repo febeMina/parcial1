@@ -1,0 +1,117 @@
+
+
+<h2>Informacion de contacto</h2>
+<div>
+    <label>Nombre:</label>
+    <input type="text" id="nombre" [(ngModel)]="contacto.nombre">
+</div>
+<div>
+    <label>Email:</label>
+    <input type="text" id="email" [(ngModel)]="contacto.email">
+</div>
+<hr>
+<h3>Detalles de contacto</h3>
+<p>Nombre: {{ contacto.nombre }}</p>
+<p>Email: {{ contacto.email}}</p>
+
+
+
+<h2>Imagenes</h2>
+<div>
+    <label>Ingrese URL:</label>
+    <input type="text" id="nombre" [(ngModel)]="url_imagen_property">
+</div>
+
+<hr>
+<h3>Imagen</h3>
+
+<img [src]="url_imagen_property"><br>
+
+
+<p>Correo: {{ correo }}</p>
+Intruduce el correo <input type="text" [(ngModel)]="correo">
+<br>
+
+
+<br>
+{{ texto_registro }} 
+<br>
+Resgistrado: <input type="radio" name="n_radio" id="registro" [checked]="usuario_registrado_porperty" (click)="set_usuario_registrado($event)" value="si"><br>
+No resgistrado: <input type="radio" name="n_radio" [checked]="usuario_registrado_porperty" (click)="set_usuario_registrado($event)" value="no"><br>
+
+
+
+<br>
+{{ genero_registrado }} 
+<br>
+Femenino: <input type="radio" name="n_radio" id="registro" [checked]="genero_registrado_porperty" (click)="set_genero_registrado($event)" value="si"><br>
+Masculino: <input type="radio" name="n_radio" [checked]="genero_registrado_porperty" (click)="set_genero_registrado($event)" value="no"><br>
+
+<br>
+
+
+<label>
+    <p>
+    <!--Operador ternario-->
+            Estado del checkbox: {{ estado_checkbox ? 'Marcado' : 'No marcado'}}
+    </p>
+    <input type="checkbox" [(ngModel)]="estado_checkbox"> Marcar/Desmarcar
+    
+</label>
+
+
+<br>
+<br>
+{{ seleccion }} <br>
+Intruduce la opcion <select [(ngModel)]="seleccion">
+    <option value="Seleccione">Seleccione</option>
+    <option value="Hola">Hola</option>
+    <option value="Adios">Adios</option>
+</select>
+
+
+<br>
+<br>
+{{ carrera }} <br>
+Intruduce la carrera <select [(ngModel)]="carrera">
+    <option value="Seleccione">Seleccione</option>
+    <option value="Ingeniria CC">Ingeniria CC</option>
+    <option value="Comunicaciones">Comunicaciones</option>
+    <option value="Licenciatura">Licenciatura</option>
+</select>
+
+
+<br>
+
+<hr>
+<body bgcolor="yellow"> Esto es una línea de texto.</body>
+<button [style]="color_boton_property" (click)="lanzar_mensaje()">
+    Cambiar color
+</button>
+
+<hr>
+
+
+<button (click)="incrementar()">Incrementar</button>
+{{ contador }}
+<button (click)="decrementar()">Decrementar</button>
+<hr>
+<button (click)="restablecer()">Restablecer</button>
+
+
+
+<div class="div-color" [style]="color_div_property">
+    <p>PROGRAMACION FEBE MARTINEZ</p>
+</div>
+<button (click)="cambiar_color_div()">CAMBIAR COLOR</button>
+
+
+
+
+
+<div class="div-imagen" [ngModel]="url_imagen_property">
+    <p>PROGRAMACION FEBE MARTINEZ</p>
+</div>
+
+<img [src]="url_imagen_property"><br>
+<button (click)="cambiar_imagen_div">CAMBIAR IMAGEN</button>
